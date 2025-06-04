@@ -60,6 +60,21 @@ services:
       - 5435
     command: -p 5435
 
+  ### Posgres database for feedback
+  db-feedback:
+    container_name: db-feedback
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ms_feedback
+      POSTGRES_USER: uncledave
+      POSTGRES_PASSWORD: Test123
+    ports:
+      - 5436:5436
+    expose:
+      - 5436
+    command: -p 5436
+
   ### Posgres database for Keycloak
   db-keycloak:
     container_name: db-keycloak
