@@ -1,0 +1,212 @@
+{
+    "info": {
+        "name": "API M\u00fasica - Controladores",
+        "_postman_id": "musica-api-collection",
+        "description": "Colecci\u00f3n de endpoints para Alumno, Profesor, Clase e Inscripci\u00f3n",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Alumnos",
+            "item": [
+                {
+                    "name": "Listar Alumnos",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/alumnos",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "alumnos"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear Alumno",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombre\": \"Juan P\\u00e9rez\",\n    \"correo\": \"juan@example.com\",\n    \"edad\": 15,\n    \"nivel\": \"intermedio\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/alumnos",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "alumnos"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Profesores",
+            "item": [
+                {
+                    "name": "Listar Profesores",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/profesores",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "profesores"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear Profesor",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"nombre\": \"Mar\\u00eda L\\u00f3pez\",\n    \"especialidad\": \"Viol\\u00edn\",\n    \"disponibilidad\": \"Lunes a Viernes\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/profesores",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "profesores"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Clases",
+            "item": [
+                {
+                    "name": "Listar Clases",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/api/clases",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "clases"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Crear Clase",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"horario\": \"2025-05-18T16:33:22\",\n    \"sala\": {\n        \"id\": 1\n    },\n    \"instrumento\": {\n        \"id\": 1\n    },\n    \"profesor\": {\n        \"id\": 1\n    }\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/clases",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "clases"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Asignar Clase a Profesor",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"profesorId\": 1,\n    \"salaId\": 1,\n    \"instrumentoId\": 1,\n    \"horario\": \"2025-05-18T16:33:22\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/clases/asignar",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "clases",
+                                "asignar"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Inscripciones",
+            "item": [
+                {
+                    "name": "Inscribir Alumno a Clase",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"alumnoId\": 1,\n    \"claseId\": 1\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/inscripciones",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "api",
+                                "inscripciones"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
