@@ -29,6 +29,7 @@
         <module>products-service</module>
         <module>notification-service</module>
         <module>reviews-service</module>
+        <module>feedback-service</module>
     </modules>
 
     <dependencies>
